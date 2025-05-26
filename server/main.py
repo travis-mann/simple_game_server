@@ -16,17 +16,14 @@ with open(r"maps\map_1.txt") as f:
 # --- func ---
 def get_server_socket(port: int) -> None:
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    server_socket.bind(("localhost", port))
+    server_socket.bind(("0.0.0.0", port))
     server_socket.settimeout(3)
     return server_socket
 
 
 def get_new_client_id() -> int:
     id = random.randint(0, 1000)
-    while id in ADDR_ID_MAP.values():
-        id = random.randint(0, 1000)
-    return id
-
+    while id in ADDR_ID_MAP.values():s
 
 def connect_client(addr: Tuple[str, int], clients: set) -> int:
     if addr not in clients:

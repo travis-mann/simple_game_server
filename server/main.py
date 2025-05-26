@@ -23,7 +23,10 @@ def get_server_socket(port: int) -> None:
 
 def get_new_client_id() -> int:
     id = random.randint(0, 1000)
-    while id in ADDR_ID_MAP.values():s
+    while id in ADDR_ID_MAP.values():
+        id = random.randint(0, 1000)
+    return id
+
 
 def connect_client(addr: Tuple[str, int], clients: set) -> int:
     if addr not in clients:

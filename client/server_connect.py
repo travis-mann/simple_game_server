@@ -18,7 +18,7 @@ def _get_server_address() -> Tuple[str, int]:
 # --- public ---
 def connect(client_socket: socket.socket) -> Tuple[Tuple[str, int], int]:
     while True:
-        server_address = ("localhost", 9999)  # _get_server_address()
+        server_address = _get_server_address()
         try:
             client_socket.sendto(Commands.ACK.value, server_address)
             client_socket.settimeout(5)

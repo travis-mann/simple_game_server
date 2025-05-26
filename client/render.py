@@ -33,6 +33,5 @@ def render(game_state: GameState) -> None:
         draw_game_object(missile, ".", lines)
 
     print(f"Health: {game_state.server_data['PLAYERS'][game_state.player_id]['HEALTH']}")
-    print(f"Players: {game_state.server_data['PLAYERS']}")
     for line in lines:
         print(line)

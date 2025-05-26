@@ -2,7 +2,6 @@
 import json
 import random
 import socket
-import threading
 from typing import Tuple
 from shared.commands import Commands
 from shared.directions import Directions
